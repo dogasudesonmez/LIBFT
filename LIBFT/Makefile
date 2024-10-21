@@ -5,7 +5,8 @@ ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strnstr.c ft_st
 ft_calloc.c ft_strdup.c ft_atoi.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c \
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c \
 	
-BSOURCES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+BSOURCES = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
+ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c  ft_lstmap_bonus.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 BOBJECTS = $(BSOURCES:.c=.o)
@@ -24,8 +25,8 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-bonus: $(OBJECTS) $(BOBJECTS)
-	ar -r $(NAME) $(OBJECTS) $(BOBJECTS)
+bonus: all $(BOBJECTS)
+	ar -r $(NAME) $(BOBJECTS)
 re: fclean all
 
 .PHONY: all clean fclean re bonus
